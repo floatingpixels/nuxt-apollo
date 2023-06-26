@@ -1,0 +1,13 @@
+diff --git a/jsutils/instanceOf.mjs b/jsutils/instanceOf.mjs
+index 0f05267868f359e37e7790329d0609c6761af70a..aceafc5a7817704244a576e53db8617cda109f04 100644
+--- a/jsutils/instanceOf.mjs
++++ b/jsutils/instanceOf.mjs
+@@ -9,7 +9,7 @@ import { inspect } from './inspect.mjs';
+ export const instanceOf =
+   /* c8 ignore next 6 */
+   // FIXME: https://github.com/graphql/graphql-js/issues/2317
+-  globalThis.process && globalThis.process.env.NODE_ENV === 'production'
++  process && process.env.NODE_ENV === 'production'
+     ? function instanceOf(value, constructor) {
+         return value instanceof constructor;
+       }
